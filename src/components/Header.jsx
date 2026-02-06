@@ -8,14 +8,14 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Products", path: "/products" },
-    { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", isRoute: true },
+    { name: "About Us", path: "#about", isRoute: false },
+    { name: "Products", path: "/products", isRoute: true },
+    { name: "Services", path: "#services", isRoute: false },
+    { name: "Contact", path: "#contact", isRoute: false },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path, isRoute) => isRoute ? location.pathname === path : false;
 
   return (
     <header
@@ -77,24 +77,38 @@ const Header = () => {
               .mobile-toggle { display: none !important; }
             }
           `}</style>
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              style={{
-                fontWeight: "500",
-                color: isActive(link.path)
-                  ? "var(--color-primary)"
-                  : "var(--color-text)",
-                borderBottom: isActive(link.path)
-                  ? "2px solid var(--color-secondary)"
-                  : "none",
-                paddingBottom: "5px",
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => 
+            link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.path}
+                style={{
+                  fontWeight: "500",
+                  color: isActive(link.path, link.isRoute)
+                    ? "var(--color-primary)"
+                    : "var(--color-text)",
+                  borderBottom: isActive(link.path, link.isRoute)
+                    ? "2px solid var(--color-secondary)"
+                    : "none",
+                  paddingBottom: "5px",
+                }}
+              >
+                {link.name}
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.path}
+                style={{
+                  fontWeight: "500",
+                  color: "var(--color-text)",
+                  paddingBottom: "5px",
+                }}
+              >
+                {link.name}
+              </a>
+            )
+          )}
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -124,23 +138,39 @@ const Header = () => {
             zIndex: 999,
           }}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              style={{
-                fontSize: "1.1rem",
-                fontWeight: "500",
-                color: isActive(link.path)
-                  ? "var(--color-primary)"
-                  : "var(--color-text)",
-                textAlign: "center",
-              }}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => 
+            link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  fontSize: "1.1rem",
+                  fontWeight: "500",
+                  color: isActive(link.path, link.isRoute)
+                    ? "var(--color-primary)"
+                    : "var(--color-text)",
+                  textAlign: "center",
+                }}
+              >
+                {link.name}
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  fontSize: "1.1rem",
+                  fontWeight: "500",
+                  color: "var(--color-text)",
+                  textAlign: "center",
+                }}
+              >
+                {link.name}
+              </a>
+            )
+          )}
         </div>
       )}
     </header>

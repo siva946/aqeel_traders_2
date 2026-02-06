@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Award, ShieldCheck, Truck } from "lucide-react";
-import { companyInfo } from "../data/data";
+import { ArrowRight, Globe, Award, ShieldCheck, Truck, Package, ClipboardCheck, Ship, CheckCircle, MapPin, Phone, Mail } from "lucide-react";
+import { companyInfo, exportDestinations, products } from "../data/data";
+import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   return (
@@ -58,13 +59,13 @@ const Home = () => {
             >
               Explore Products
             </Link>
-            <Link
-              to="/contact"
+            <a
+              href="#contact"
               className="btn"
               style={{ backgroundColor: "transparent", borderColor: "#fff" }}
             >
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -116,8 +117,8 @@ const Home = () => {
                   Network
                 </li>
               </ul>
-              <Link
-                to="/about"
+              <a
+                href="#about"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -127,7 +128,7 @@ const Home = () => {
                 }}
               >
                 Read More About Us <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
             <div
               style={{
@@ -210,6 +211,186 @@ const Home = () => {
               <p style={{ fontSize: "0.9rem", opacity: 0.8 }}>
                 Efficient logistics network.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Preview Section */}
+      <section className="section-padding" style={{ backgroundColor: "#f9f9f9" }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: "60px" }}>
+            <h2 style={{ fontSize: "2.5rem" }}>Our Products</h2>
+            <p style={{ maxWidth: "600px", margin: "0 auto", color: "var(--color-text-light)" }}>
+              Explore our wide range of premium Indian spices, grains, pulses, and more.
+            </p>
+          </div>
+
+          {products.slice(0, 4).map((category, index) => (
+            <div key={index} style={{ marginBottom: "60px" }}>
+              <h3 style={{ borderLeft: "5px solid var(--color-secondary)", paddingLeft: "15px", marginBottom: "30px", fontSize: "1.8rem" }}>
+                {category.category}
+              </h3>
+              <div className="grid grid-3" style={{ gap: "30px" }}>
+                {category.items.slice(0, 3).map((item, i) => (
+                  <ProductCard key={i} name={item} category={category.category} />
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <div className="text-center" style={{ marginTop: "40px" }}>
+            <Link to="/products" className="btn btn-primary" style={{ fontSize: "1.1rem", padding: "15px 40px" }}>
+              View More Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="section-padding" style={{ backgroundColor: "#fff" }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: "60px" }}>
+            <h2 style={{ fontSize: "2.5rem" }}>Export Solutions</h2>
+            <p style={{ maxWidth: "600px", margin: "0 auto", color: "var(--color-text-light)" }}>
+              Comprehensive export services tailored for global trade.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: "40px", marginBottom: "80px" }}>
+            {[
+              { title: "Product Sourcing & Inspection", icon: <ClipboardCheck size={40} color="var(--color-secondary)" />, desc: "We ensure strict quality control and inspection before shipment." },
+              { title: "Customized Packaging", icon: <Package size={40} color="var(--color-secondary)" />, desc: "Private labeling and packaging solutions to meet your brand needs." },
+              { title: "Global Logistics", icon: <Ship size={40} color="var(--color-secondary)" />, desc: "Efficient shipping coordination to ensuring timely delivery." },
+              { title: "Documentation & Compliance", icon: <Globe size={40} color="var(--color-secondary)" />, desc: "Handling all export documentation and customs clearance." },
+            ].map((service, idx) => (
+              <div key={idx} style={{ display: "flex", gap: "20px", padding: "30px", border: "1px solid #eee", borderRadius: "8px" }}>
+                <div>{service.icon}</div>
+                <div>
+                  <h3 style={{ marginBottom: "10px" }}>{service.title}</h3>
+                  <p style={{ color: "var(--color-text-light)" }}>{service.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ backgroundColor: "#f8f9fa", padding: "60px 40px", borderRadius: "16px" }}>
+            <h3 className="text-center" style={{ marginBottom: "40px" }}>Our Export Destinations</h3>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "15px", justifyContent: "center" }}>
+              {exportDestinations.map((country, idx) => (
+                <span key={idx} style={{ padding: "10px 20px", backgroundColor: "#fff", boxShadow: "0 2px 5px rgba(0,0,0,0.05)", borderRadius: "30px", fontSize: "0.95rem", fontWeight: "500", color: "var(--color-primary)" }}>
+                  {country}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="section-padding" style={{ backgroundColor: "#f9f9f9" }}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: "60px" }}>
+            <h2 style={{ fontSize: "2.5rem" }}>About Us</h2>
+            <p style={{ maxWidth: "600px", margin: "0 auto", color: "var(--color-text-light)" }}>
+              Dedicated to sourcing, processing, and exporting premium food products worldwide.
+            </p>
+          </div>
+
+          <div className="grid grid-2" style={{ gap: "60px", alignItems: "center", marginBottom: "80px" }}>
+            <div>
+              <h3 style={{ marginBottom: "20px" }}>Who We Are</h3>
+              <p style={{ marginBottom: "20px", fontSize: "1.1rem" }}>{companyInfo.description}</p>
+              <p>Based in India, we have established a strong network of suppliers and farmers, ensuring that we only export the finest quality produce. Our commitment to strict quality standards has made us a preferred partner for international buyers.</p>
+            </div>
+            <div style={{ backgroundColor: "#fff", padding: "40px", borderRadius: "8px" }}>
+              <h4 style={{ marginBottom: "20px" }}>Our Mission</h4>
+              <p style={{ fontStyle: "italic", marginBottom: "30px" }}>"{companyInfo.mission}"</p>
+              <h4 style={{ marginBottom: "20px" }}>Our Vision</h4>
+              <p style={{ fontStyle: "italic" }}>"{companyInfo.vision}"</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-center" style={{ marginBottom: "40px" }}>Why Choose Aqeel Traders?</h3>
+            <div className="grid grid-3">
+              {["International quality standards", "Competitive pricing", "Timely delivery & logistics", "Customized packaging", "Long-term partnerships", "Ethical business practices"].map((item, index) => (
+                <div key={index} style={{ padding: "30px", border: "1px solid #eee", borderRadius: "8px", textAlign: "center", backgroundColor: "#fff" }}>
+                  <CheckCircle size={32} color="var(--color-secondary)" style={{ marginBottom: "15px" }} />
+                  <h4 style={{ fontSize: "1.2rem" }}>{item}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="section-padding" style={{ backgroundColor: "#fff" }}>
+        <div className="container">
+          <h2 className="text-center" style={{ marginBottom: "60px", fontSize: "2.5rem" }}>Contact Us</h2>
+
+          <div className="grid grid-2" style={{ gap: "60px" }}>
+            <div>
+              <h3 style={{ marginBottom: "30px" }}>Get In Touch</h3>
+              <p style={{ marginBottom: "40px", color: "var(--color-text-light)" }}>
+                Have an inquiry or want to request a quote? Fill out the form or contact us directly.
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+                <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+                  <div style={{ padding: "15px", backgroundColor: "rgba(212, 175, 55, 0.1)", borderRadius: "50%" }}>
+                    <MapPin size={24} color="var(--color-secondary)" />
+                  </div>
+                  <div>
+                    <h4 style={{ marginBottom: "5px" }}>Our Location</h4>
+                    <p>{companyInfo.contact.location}</p>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+                  <div style={{ padding: "15px", backgroundColor: "rgba(212, 175, 55, 0.1)", borderRadius: "50%" }}>
+                    <Mail size={24} color="var(--color-secondary)" />
+                  </div>
+                  <div>
+                    <h4 style={{ marginBottom: "5px" }}>Email Us</h4>
+                    <p>{companyInfo.contact.email}</p>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+                  <div style={{ padding: "15px", backgroundColor: "rgba(212, 175, 55, 0.1)", borderRadius: "50%" }}>
+                    <Phone size={24} color="var(--color-secondary)" />
+                  </div>
+                  <div>
+                    <h4 style={{ marginBottom: "5px" }}>Call Us</h4>
+                    <p>{companyInfo.contact.phone}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <form style={{ padding: "40px", backgroundColor: "#f9f9f9", boxShadow: "0 5px 30px rgba(0,0,0,0.05)", borderRadius: "12px" }}>
+                <h3 style={{ marginBottom: "20px" }}>Send a Message</h3>
+
+                <div style={{ marginBottom: "20px" }}>
+                  <label style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}>Your Name</label>
+                  <input type="text" placeholder="John Doe" style={{ width: "100%", padding: "12px", border: "1px solid #ddd", borderRadius: "4px" }} />
+                </div>
+
+                <div style={{ marginBottom: "20px" }}>
+                  <label style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}>Email Address</label>
+                  <input type="email" placeholder="john@example.com" style={{ width: "100%", padding: "12px", border: "1px solid #ddd", borderRadius: "4px" }} />
+                </div>
+
+                <div style={{ marginBottom: "20px" }}>
+                  <label style={{ display: "block", marginBottom: "8px", fontWeight: "500" }}>Message</label>
+                  <textarea rows="5" placeholder="Tell us about your requirements..." style={{ width: "100%", padding: "12px", border: "1px solid #ddd", borderRadius: "4px" }}></textarea>
+                </div>
+
+                <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>Send Message</button>
+              </form>
             </div>
           </div>
         </div>

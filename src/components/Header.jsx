@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { companyInfo } from "../data/data";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOthersOpen, setIsOthersOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -15,7 +16,14 @@ const Header = () => {
     { name: "Contact", path: "#contact", isRoute: false },
   ];
 
-  const isActive = (path, isRoute) => isRoute ? location.pathname === path : false;
+  const othersDropdown = [
+    { name: "Scrap Metal", path: "/others/scrap-metal" },
+    { name: "Automobile", path: "/others/automobile" },
+    { name: "Stainless Steel", path: "/others/stainless-steel" },
+  ];
+
+  const isActive = (path, isRoute) =>
+    isRoute ? location.pathname === path : false;
 
   return (
     <header
@@ -73,11 +81,32 @@ const Header = () => {
         <nav className="desktop-nav" style={{ display: "none" }}>
           <style>{`
             @media (min-width: 768px) {
-              .desktop-nav { display: flex !important; gap: 30px; }
+              .desktop-nav { display: flex !important; gap: 30px; align-items: center; }
               .mobile-toggle { display: none !important; }
             }
+            .dropdown-menu {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              background: #fff;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+              border-radius: 4px;
+              padding: 10px 0;
+              min-width: 180px;
+              margin-top: 10px;
+            }
+            .dropdown-menu a {
+              display: block;
+              padding: 10px 20px;
+              color: var(--color-text);
+              font-weight: 500;
+            }
+            .dropdown-menu a:hover {
+              background: #f5f5f5;
+              color: var(--color-primary);
+            }
           `}</style>
-          {navLinks.map((link) => 
+          {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
@@ -95,7 +124,7 @@ const Header = () => {
               >
                 {link.name}
               </Link>
-            ) : (
+            ) : location.pathname === "/" ? (
               <a
                 key={link.name}
                 href={link.path}
@@ -107,8 +136,50 @@ const Header = () => {
               >
                 {link.name}
               </a>
-            )
+            ) : (
+              <Link
+                key={link.name}
+                to={`/${link.path}`}
+                style={{
+                  fontWeight: "500",
+                  color: "var(--color-text)",
+                  paddingBottom: "5px",
+                }}
+              >
+                {link.name}
+              </Link>
+            ),
           )}
+
+          {/* Others Dropdown */}
+          <div
+            style={{ position: "relative" }}
+            onMouseEnter={() => setIsOthersOpen(true)}
+            onMouseLeave={() => setIsOthersOpen(false)}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+                fontWeight: "500",
+                color: "var(--color-text)",
+                cursor: "pointer",
+                paddingBottom: "5px",
+              }}
+            >
+              Others <ChevronDown size={16} />
+            </div>
+            {isOthersOpen && (
+              <div className="dropdown-menu">
+                {othersDropdown.map((item) => (
+                  <Link key={item.name} to={item.path}>
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -138,7 +209,7 @@ const Header = () => {
             zIndex: 999,
           }}
         >
-          {navLinks.map((link) => 
+          {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
@@ -155,7 +226,7 @@ const Header = () => {
               >
                 {link.name}
               </Link>
-            ) : (
+            ) : location.pathname === "/" ? (
               <a
                 key={link.name}
                 href={link.path}
@@ -169,8 +240,52 @@ const Header = () => {
               >
                 {link.name}
               </a>
-            )
+            ) : (
+              <Link
+                key={link.name}
+                to={`/${link.path}`}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  fontSize: "1.1rem",
+                  fontWeight: "500",
+                  color: "var(--color-text)",
+                  textAlign: "center",
+                }}
+              >
+                {link.name}
+              </Link>
+            ),
           )}
+
+          {/* Others Mobile Dropdown */}
+          <div style={{ textAlign: "center" }}>
+            <div
+              style={{
+                fontSize: "1.1rem",
+                fontWeight: "500",
+                color: "var(--color-text)",
+                marginBottom: "10px",
+              }}
+            >
+              Others
+            </div>
+            {othersDropdown.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  display: "block",
+                  fontSize: "1rem",
+                  fontWeight: "400",
+                  color: "var(--color-text-light)",
+                  padding: "8px 0",
+                }}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </header>

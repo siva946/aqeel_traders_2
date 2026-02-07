@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import { products } from "../data/data";
+import { products, getProductImage } from "../data/data";
 
 const Products = () => {
   return (
@@ -30,14 +30,19 @@ const Products = () => {
                 borderLeft: "5px solid var(--color-secondary)",
                 paddingLeft: "15px",
                 marginBottom: "30px",
-                fontSize: "2rem",
+                fontSize: "1rem",
               }}
             >
               {category.category}
             </h2>
             <div className="grid grid-3" style={{ gap: "30px" }}>
               {category.items.map((item, i) => (
-                <ProductCard key={i} name={item} category={category.category} />
+                <ProductCard
+                  key={i}
+                  name={item}
+                  category={category.category}
+                  image={getProductImage(item)}
+                />
               ))}
             </div>
           </div>

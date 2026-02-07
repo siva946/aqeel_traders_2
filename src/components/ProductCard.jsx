@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ name, category }) => {
+const ProductCard = ({ name, category, image }) => {
   // Placeholder color based on category to make it colorful
   const getColor = (cat) => {
     if (cat.includes("Spices")) return "#e32636";
@@ -8,6 +8,9 @@ const ProductCard = ({ name, category }) => {
     if (cat.includes("Pulses")) return "#2e8b57";
     if (cat.includes("Oil")) return "#daa520";
     if (cat.includes("Fruits")) return "#cd853f";
+    if (cat.includes("Scrap Metal")) return "#708090";
+    if (cat.includes("Automobile")) return "#4169e1";
+    if (cat.includes("Stainless Steel")) return "#c0c0c0";
     return "#0a2351";
   };
 
@@ -29,16 +32,31 @@ const ProductCard = ({ name, category }) => {
       <div
         style={{
           height: "200px",
-          backgroundColor: getColor(category),
+          backgroundColor: image ? "transparent" : getColor(category),
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           color: "rgba(255,255,255,0.2)",
           fontSize: "4rem",
           fontWeight: "bold",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        {name.charAt(0)}
+        {image ? (
+          <img
+            src={image}
+            alt={name}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transition: "transform 0.3s ease",
+            }}
+          />
+        ) : (
+          name.charAt(0)
+        )}
       </div>
       <div style={{ padding: "20px" }}>
         <p

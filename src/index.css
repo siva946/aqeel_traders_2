@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -114,5 +114,88 @@ img {
   }
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 425px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Shared styles for items */
+.destination-item {
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* Mobile Infinite Scroll for Export Destinations */
+.destinations-wrapper {
+  width: 100%;
+}
+
+.destinations-track {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .destinations-wrapper {
+    overflow: hidden;
+    position: relative;
+    /* Add mask to fade edges */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .destinations-track {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: wrap;        /* Wrap to next column */
+    height: 180px;          /* Fixed height for approx 3 rows */
+    align-content: flex-start;
+    text-align: center;
+    justify-content: flex-start;
+    min-width: max-content;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .destinations-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Ensure items don't shrink */
+  .destinations-track > span {
+    flex: 0 0 auto;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

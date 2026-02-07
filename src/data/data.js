@@ -1,3 +1,16 @@
+import black_pepper from "../assets/products/black_pepper.webp";
+import cardamom from "../assets/products/cardamom.webp";
+import cloves from "../assets/products/cloves.webp";
+import cinnamon from "../assets/products/cinnamon.webp";
+import fenugureek_seeds from "../assets/products/fengureek_seeds.webp";
+// import mustard_seeds from "../assets/products/mustard_seeds.webp"
+// import fennel_seeds from "../assets/products/fennel_seeds.webp"
+import dry_red_chilli from "../assets/products/dry_red_chili.webp";
+import chilli_powder from "../assets/products/chilli_powder.webp";
+import turmeric from "../assets/products/turmeric.webp";
+import coriander_seeds from "../assets/products/coriander.webp";
+import cumin_seeds from "../assets/products/cumin_seeds.webp";
+
 export const products = [
   {
     category: "Spices & Condiments",
@@ -13,8 +26,8 @@ export const products = [
       "Cinnamon",
       "Fenugreek Seeds",
       "Mustard Seeds",
-      "Fennel Seeds"
-    ]
+      "Fennel Seeds",
+    ],
   },
   {
     category: "Grains & Cereals",
@@ -24,8 +37,8 @@ export const products = [
       "Wheat",
       "Maize (Corn)",
       "Barley",
-      "Millet varieties (Bajra, Jowar, Ragi)"
-    ]
+      "Millet varieties (Bajra, Jowar, Ragi)",
+    ],
   },
   {
     category: "Pulses & Lentils",
@@ -36,8 +49,8 @@ export const products = [
       "Black Gram (Urad)",
       "Toor Dal",
       "Masoor Dal",
-      "Kidney Beans (Rajma)"
-    ]
+      "Kidney Beans (Rajma)",
+    ],
   },
   {
     category: "Oil Seeds & Edible Oils",
@@ -47,8 +60,8 @@ export const products = [
       "Soybean",
       "Sunflower Seeds",
       "Mustard Seeds",
-      "Edible Oils (Groundnut Oil, Sesame Oil, Sunflower Oil)"
-    ]
+      "Edible Oils (Groundnut Oil, Sesame Oil, Sunflower Oil)",
+    ],
   },
   {
     category: "Dry Fruits & Nuts",
@@ -58,8 +71,8 @@ export const products = [
       "Raisins",
       "Dates",
       "Walnuts",
-      "Pistachios"
-    ]
+      "Pistachios",
+    ],
   },
   {
     category: "Processed & Packaged Foods",
@@ -69,8 +82,8 @@ export const products = [
       "Pickles",
       "Papad",
       "Instant food mixes",
-      "Snacks and namkeen items"
-    ]
+      "Snacks and namkeen items",
+    ],
   },
   {
     category: "Fresh & Dehydrated Products",
@@ -78,27 +91,93 @@ export const products = [
       "Fresh Fruits and Vegetables (as per season)",
       "Dehydrated Onion, Garlic, Ginger",
       "Dehydrated Vegetables",
-      "Frozen food items (on request)"
-    ]
-  }
+      "Frozen food items (on request)",
+    ],
+  },
+];
+export const productImages = [
+  { name: "black_pepper", src: black_pepper },
+  { name: "cardamom", src: cardamom },
+  { name: "cloves", src: cloves },
+  { name: "cinnamon", src: cinnamon },
+  { name: "fenugureek_seeds", src: fenugureek_seeds },
+  // { name: "mustard_seeds", src: mustard_seeds },
+  // { name: "fennel_seeds", src: fennel_seeds },
+  { name: "dry_red_chilli", src: dry_red_chilli },
+  { name: "chilli_powder", src: chilli_powder },
+  { name: "turmeric", src: turmeric },
+  { name: "coriander_seeds", src: coriander_seeds },
+  { name: "cumin_seeds", src: cumin_seeds },
 ];
 
+export const getProductImage = (productName) => {
+  const normalizedName = productName.toLowerCase();
+
+  // Direct matches
+  const directMatch = productImages.find(
+    (img) =>
+      normalizedName.includes(img.name.replace("_", " ")) ||
+      img.name.replace("_", " ").includes(normalizedName),
+  );
+  if (directMatch) return directMatch.src;
+
+  // Specific mapping for complex names
+  if (normalizedName.includes("black pepper")) return black_pepper;
+  if (normalizedName.includes("cardamom")) return cardamom;
+  if (normalizedName.includes("clove")) return cloves;
+  if (normalizedName.includes("cinnamon")) return cinnamon;
+  if (normalizedName.includes("fenugreek")) return fenugureek_seeds;
+  if (normalizedName.includes("dry red chilli")) return dry_red_chilli;
+  if (normalizedName.includes("chilli powder")) return chilli_powder;
+  if (normalizedName.includes("turmeric")) return turmeric;
+  if (normalizedName.includes("coriander")) return coriander_seeds;
+  if (normalizedName.includes("cumin")) return cumin_seeds;
+
+  return null;
+};
+
 export const exportDestinations = [
-  "China", "Malaysia, Sabah", "Singapore", "Vietnam", "Turkey", "Thailand",
-  "Saudi Arabia", "UAE", "Maldives", "America", "Afghanistan", "Hong Kong SAR",
-  "Indonesia", "Sri Lanka", "South Korea", "Qatar", "Philippines", "Nepal",
-  "Muscat", "New Zealand", "Mexico", "Brazil", "United Kingdom", "United States", "Belize"
+  "China",
+  "Malaysia, Sabah",
+  "Singapore",
+  "Vietnam",
+  "Turkey",
+  "Thailand",
+  "Saudi Arabia",
+  "UAE",
+  "Maldives",
+  "America",
+  "Afghanistan",
+  "Hong Kong SAR",
+  "Indonesia",
+  "Sri Lanka",
+  "South Korea",
+  "Qatar",
+  "Philippines",
+  "Nepal",
+  "Muscat",
+  "New Zealand",
+  "Mexico",
+  "Brazil",
+  "United Kingdom",
+  "United States",
+  "Belize",
+  "Bangaladesh",
+  "Malaysia",
 ];
 
 export const companyInfo = {
   name: "Aqeel Traders",
   tagline: "Global Exporters of Premium Food Products from India",
-  description: "Aqeel Traders is a trusted export and import company specializing in a wide range of high-quality food products from India. We supply spices, grains, pulses, oil seeds, processed foods, and agro commodities to global markets with a strong focus on quality, reliability, and customer satisfaction.",
-  mission: "To deliver high-quality food products globally with integrity, efficiency, and excellence.",
-  vision: "To become a globally recognized exporter of Indian food and agro products.",
+  description:
+    "Aqeel Traders is a trusted export and import company specializing in a wide range of high-quality food products from India. We supply spices, grains, pulses, oil seeds, processed foods, and agro commodities to global markets with a strong focus on quality, reliability, and customer satisfaction.",
+  mission:
+    "To deliver high-quality food products globally with integrity, efficiency, and excellence.",
+  vision:
+    "To become a globally recognized exporter of Indian food and agro products.",
   contact: {
     location: "India",
     email: "info@aqeeltraders.com",
-    phone: "+91-XXXXXXXXXX"
-  }
+    phone: "+91-XXXXXXXXXX",
+  },
 };

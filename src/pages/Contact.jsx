@@ -43,7 +43,8 @@ const Contact = () => {
                 </div>
                 <div className="contact-info-content">
                   <h4>Call Us</h4>
-                  <p>{companyInfo.contact.phone}</p>
+                  <p>{companyInfo.contact.phone1}</p>
+                  <p>{companyInfo.contact.phone2}</p>
                 </div>
               </div>
             </div>

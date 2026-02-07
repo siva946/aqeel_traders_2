@@ -204,8 +204,8 @@ export const companyInfo = {
     "To become a globally recognized exporter of Indian food and agro products.",
   contact: {
     location: "India",
-    email: "aqeeltraders7557@gmail.com",
-    phone1: "+919443187557",
-    phone2: "+916383618434",
+    email: import.meta.env.VITE_EMAIL_ADDRESS,
+    phone1: import.meta.env.VITE_PHONE_1,
+    phone2: import.meta.env.VITE_PHONE_2,
   },
 };

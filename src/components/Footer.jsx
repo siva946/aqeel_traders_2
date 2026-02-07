@@ -5,52 +5,42 @@ import { companyInfo } from "../data/data";
 
 const Footer = () => {
   return (
-    <footer
-      style={{
-        backgroundColor: "var(--color-primary)",
-        color: "#fff",
-        padding: "60px 0 20px",
-      }}
-    >
+    <footer>
       <div className="container">
         <div className="grid grid-3">
           <div>
-            <h3 style={{ color: "var(--color-secondary)" }}>
-              {companyInfo.name}
-            </h3>
-            <p style={{ marginBottom: "20px", color: "#ccc" }}>
-              {companyInfo.tagline}
-            </p>
-            <p style={{ color: "#ccc", fontSize: "0.9rem" }}>
+            <h3 className="footer-title">{companyInfo.name}</h3>
+            <p className="footer-tagline">{companyInfo.tagline}</p>
+            <p className="footer-description">
               Exporting premium quality Indian food products to the world.
             </p>
           </div>
 
           <div>
-            <h4 style={{ color: "#fff" }}>Quick Links</h4>
-            <ul style={{ lineHeight: "2" }}>
+            <h4 className="footer-section-title">Quick Links</h4>
+            <ul className="footer-links">
               <li>
-                <Link to="/" style={{ color: "#ccc" }}>
+                <Link to="/" className="footer-link">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" style={{ color: "#ccc" }}>
+                <Link to="/about" className="footer-link">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" style={{ color: "#ccc" }}>
+                <Link to="/products" className="footer-link">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/services" style={{ color: "#ccc" }}>
+                <Link to="/services" className="footer-link">
                   Export Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" style={{ color: "#ccc" }}>
+                <Link to="/contact" className="footer-link">
                   Contact Us
                 </Link>
               </li>
@@ -58,40 +48,35 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 style={{ color: "#fff" }}>Contact Us</h4>
-            <ul style={{ lineHeight: "2", color: "#ccc" }}>
-              <li
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
-              >
-                <MapPin size={18} color="var(--color-secondary)" />{" "}
+            <h4 className="footer-section-title">Contact Us</h4>
+            <ul className="footer-contact">
+              <li className="footer-contact-item">
+                <MapPin size={18} color="var(--color-secondary)" />
                 {companyInfo.contact.location}
               </li>
-              <li
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
-              >
-                <Mail size={18} color="var(--color-secondary)" />{" "}
-                {companyInfo.contact.email}
+              <li className="footer-contact-item">
+                <Mail size={18} color="var(--color-secondary)" />
+                <a href={`mailto:${companyInfo.contact.email}`}>
+                  {companyInfo.contact.email}
+                </a>
               </li>
-              <li
-                style={{ display: "flex", alignItems: "center", gap: "10px" }}
-              >
-                <Phone size={18} color="var(--color-secondary)" />{" "}
-                {companyInfo.contact.phone}
+              <li className="footer-contact-item phone">
+                <Phone size={18} color="var(--color-secondary)" />
+                <div>
+                  <a href={`tel:${companyInfo.contact.phone1}`}>
+                    {companyInfo.contact.phone1}
+                  </a>
+                  <br />
+                  <a href={`tel:${companyInfo.contact.phone2}`}>
+                    {companyInfo.contact.phone2}
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.1)",
-            marginTop: "40px",
-            paddingTop: "20px",
-            textAlign: "center",
-            fontSize: "0.9rem",
-            color: "#999",
-          }}
-        >
+        <div className="footer-bottom">
           <p>
             © 2026 {companyInfo.name}. All Rights Reserved. | Export & Import of
             Food Products

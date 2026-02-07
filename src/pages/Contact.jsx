@@ -6,88 +6,43 @@ const Contact = () => {
   return (
     <div className="page-content section-padding">
       <div className="container">
-        <h1
-          className="text-center"
-          style={{ marginBottom: "60px", fontSize: "3rem" }}
-        >
-          Contact Us
-        </h1>
+        <h1 className="text-center contact-title">Contact Us</h1>
 
-        <div className="grid grid-2" style={{ gap: "60px" }}>
-          <div>
-            <h2 style={{ marginBottom: "30px" }}>Get In Touch</h2>
-            <p
-              style={{ marginBottom: "40px", color: "var(--color-text-light)" }}
-            >
+        <div className="grid grid-2 contact-grid">
+          <div className="contact-intro">
+            <h2>Get In Touch</h2>
+            <p className="contact-intro-text">
               Have an inquiry or want to request a quote? Fill out the form or
               contact us directly.
             </p>
 
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "30px" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  alignItems: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    padding: "15px",
-                    backgroundColor: "rgba(212, 175, 55, 0.1)",
-                    borderRadius: "50%",
-                  }}
-                >
+            <div className="contact-info">
+              <div className="contact-info-item">
+                <div className="contact-icon-wrapper">
                   <MapPin size={24} color="var(--color-secondary)" />
                 </div>
-                <div>
-                  <h4 style={{ marginBottom: "5px" }}>Our Location</h4>
+                <div className="contact-info-content">
+                  <h4>Our Location</h4>
                   <p>{companyInfo.contact.location}</p>
                 </div>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  alignItems: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    padding: "15px",
-                    backgroundColor: "rgba(212, 175, 55, 0.1)",
-                    borderRadius: "50%",
-                  }}
-                >
+              <div className="contact-info-item">
+                <div className="contact-icon-wrapper">
                   <Mail size={24} color="var(--color-secondary)" />
                 </div>
-                <div>
-                  <h4 style={{ marginBottom: "5px" }}>Email Us</h4>
+                <div className="contact-info-content">
+                  <h4>Email Us</h4>
                   <p>{companyInfo.contact.email}</p>
                 </div>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  alignItems: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    padding: "15px",
-                    backgroundColor: "rgba(212, 175, 55, 0.1)",
-                    borderRadius: "50%",
-                  }}
-                >
+              <div className="contact-info-item">
+                <div className="contact-icon-wrapper">
                   <Phone size={24} color="var(--color-secondary)" />
                 </div>
-                <div>
-                  <h4 style={{ marginBottom: "5px" }}>Call Us</h4>
+                <div className="contact-info-content">
+                  <h4>Call Us</h4>
                   <p>{companyInfo.contact.phone}</p>
                 </div>
               </div>
@@ -95,87 +50,37 @@ const Contact = () => {
           </div>
 
           <div>
-            <form
-              style={{
-                padding: "40px",
-                backgroundColor: "#fff",
-                boxShadow: "0 5px 30px rgba(0,0,0,0.05)",
-                borderRadius: "12px",
-              }}
-            >
-              <h3 style={{ marginBottom: "20px" }}>Send a Message</h3>
+            <form className="contact-form">
+              <h3>Send a Message</h3>
 
-              <div style={{ marginBottom: "20px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "8px",
-                    fontWeight: "500",
-                  }}
-                >
-                  Your Name
-                </label>
+              <div className="form-group">
+                <label className="form-label">Your Name</label>
                 <input
                   type="text"
                   placeholder="John Doe"
-                  style={{
-                    width: "100%",
-                    padding: "12px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                  }}
+                  className="form-input"
                 />
               </div>
 
-              <div style={{ marginBottom: "20px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "8px",
-                    fontWeight: "500",
-                  }}
-                >
-                  Email Address
-                </label>
+              <div className="form-group">
+                <label className="form-label">Email Address</label>
                 <input
                   type="email"
                   placeholder="john@example.com"
-                  style={{
-                    width: "100%",
-                    padding: "12px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                  }}
+                  className="form-input"
                 />
               </div>
 
-              <div style={{ marginBottom: "20px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "8px",
-                    fontWeight: "500",
-                  }}
-                >
-                  Message
-                </label>
+              <div className="form-group">
+                <label className="form-label">Message</label>
                 <textarea
                   rows="5"
                   placeholder="Tell us about your requirements..."
-                  style={{
-                    width: "100%",
-                    padding: "12px",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                  }}
+                  className="form-textarea"
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{ width: "100%" }}
-              >
+              <button type="submit" className="btn btn-primary form-submit">
                 Send Message
               </button>
             </form>

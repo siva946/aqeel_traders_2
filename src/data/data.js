@@ -3,13 +3,22 @@ import cardamom from "../assets/products/cardamom.webp";
 import cloves from "../assets/products/cloves.webp";
 import cinnamon from "../assets/products/cinnamon.webp";
 import fenugureek_seeds from "../assets/products/fengureek_seeds.webp";
-// import mustard_seeds from "../assets/products/mustard_seeds.webp"
-// import fennel_seeds from "../assets/products/fennel_seeds.webp"
 import dry_red_chilli from "../assets/products/dry_red_chili.webp";
 import chilli_powder from "../assets/products/chilli_powder.webp";
 import turmeric from "../assets/products/turmeric.webp";
 import coriander_seeds from "../assets/products/coriander.webp";
 import cumin_seeds from "../assets/products/cumin_seeds.webp";
+import barley from "../assets/products/barley.webp"
+import basmati_rice from "../assets/products/basmati_rice.webp"
+import wheat from "../assets/products/wheat.webp"
+import chickpea from "../assets/products/chickpea.webp"
+import corn from "../assets/products/corn.webp"
+import fennal_seeds from "../assets/products/fennal_seeds.webp"
+import mustard_seeds from "../assets/products/mustard_seeds.webp"
+import millets from "../assets/products/millets.webp"
+import non_basmati_rice from "../assets/products/non_basmati_rice.webp"
+import red_lintal from "../assets/products/red_lintal.webp"
+
 
 export const products = [
   {
@@ -101,13 +110,21 @@ export const productImages = [
   { name: "cloves", src: cloves },
   { name: "cinnamon", src: cinnamon },
   { name: "fenugureek_seeds", src: fenugureek_seeds },
-  // { name: "mustard_seeds", src: mustard_seeds },
-  // { name: "fennel_seeds", src: fennel_seeds },
   { name: "dry_red_chilli", src: dry_red_chilli },
   { name: "chilli_powder", src: chilli_powder },
   { name: "turmeric", src: turmeric },
   { name: "coriander_seeds", src: coriander_seeds },
   { name: "cumin_seeds", src: cumin_seeds },
+  {name: "mustard_seeds", src: mustard_seeds},
+  {name: "fennel_seeds", src: fennal_seeds},
+  {name: "basmati_rice", src: basmati_rice},
+  {name: "non_basmati_rice", src: non_basmati_rice},
+  {name: "wheat", src: wheat},
+  {name: "corn", src: corn},
+  {name: "barley", src: barley},
+  {name: "millet", src: millets},
+  {name: "chickpea", src: chickpea},
+  {name: "red_lintal", src: red_lintal},
 ];
 
 export const getProductImage = (productName) => {
@@ -132,6 +149,16 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("turmeric")) return turmeric;
   if (normalizedName.includes("coriander")) return coriander_seeds;
   if (normalizedName.includes("cumin")) return cumin_seeds;
+  if (normalizedName.includes("mustard seeds")) return mustard_seeds; 
+  if (normalizedName.includes("fennel seeds")) return fennal_seeds;
+  if (normalizedName.includes("basmati_rice")) return basmati_rice;
+  if (normalizedName.includes("non basmati")) return non_basmati_rice;
+  if (normalizedName.includes("wheat")) return wheat;
+  if (normalizedName.includes("corn")) return corn;
+  if (normalizedName.includes("barley")) return barley;
+  if (normalizedName.includes("millet")) return millets;
+  if (normalizedName.includes("chickpea")) return chickpea;
+  if (normalizedName.includes("red lentil")) return red_lintal;
 
   return null;
 };
@@ -177,7 +204,8 @@ export const companyInfo = {
     "To become a globally recognized exporter of Indian food and agro products.",
   contact: {
     location: "India",
-    email: "info@aqeeltraders.com",
-    phone: "+91-XXXXXXXXXX",
+    email: "aqeeltraders7557@gmail.com",
+    phone1: "+919443187557",
+    phone2: "+916383618434",
   },
 };

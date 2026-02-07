@@ -26,126 +26,30 @@ const Header = () => {
     isRoute ? location.pathname === path : false;
 
   return (
-    <header
-      style={{
-        backgroundColor: "#fff",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          height: "80px",
-        }}
-      >
-        <Link
-          to="/"
-          style={{ display: "flex", alignItems: "center", gap: "10px" }}
-        >
-          {/* Placeholder for Logo */}
-          <div
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "var(--color-primary)",
-              borderRadius: "50%",
-              color: "#fff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontWeight: "bold",
-              fontFamily: "var(--font-heading)",
-            }}
-          >
-            AT
-          </div>
-          <span
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "700",
-              fontFamily: "var(--font-heading)",
-              color: "var(--color-primary)",
-            }}
-          >
-            {companyInfo.name}
-          </span>
+    <header>
+      <div className="container header-container">
+        <Link to="/" className="logo-link">
+          <div className="logo-circle">AT</div>
+          <span className="logo-text">{companyInfo.name}</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="desktop-nav" style={{ display: "none" }}>
-          <style>{`
-            @media (min-width: 768px) {
-              .desktop-nav { display: flex !important; gap: 30px; align-items: center; }
-              .mobile-toggle { display: none !important; }
-            }
-            .dropdown-menu {
-              position: absolute;
-              top: 100%;
-              left: 0;
-              background: #fff;
-              box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-              border-radius: 4px;
-              padding: 10px 0;
-              min-width: 180px;
-              margin-top: 10px;
-            }
-            .dropdown-menu a {
-              display: block;
-              padding: 10px 20px;
-              color: var(--color-text);
-              font-weight: 500;
-            }
-            .dropdown-menu a:hover {
-              background: #f5f5f5;
-              color: var(--color-primary);
-            }
-          `}</style>
+        <nav className="desktop-nav">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.path}
-                style={{
-                  fontWeight: "500",
-                  color: isActive(link.path, link.isRoute)
-                    ? "var(--color-primary)"
-                    : "var(--color-text)",
-                  borderBottom: isActive(link.path, link.isRoute)
-                    ? "2px solid var(--color-secondary)"
-                    : "none",
-                  paddingBottom: "5px",
-                }}
+                className={`nav-link ${isActive(link.path, link.isRoute) ? "active" : ""}`}
               >
                 {link.name}
               </Link>
             ) : location.pathname === "/" ? (
-              <a
-                key={link.name}
-                href={link.path}
-                style={{
-                  fontWeight: "500",
-                  color: "var(--color-text)",
-                  paddingBottom: "5px",
-                }}
-              >
+              <a key={link.name} href={link.path} className="nav-link">
                 {link.name}
               </a>
             ) : (
-              <Link
-                key={link.name}
-                to={`/${link.path}`}
-                style={{
-                  fontWeight: "500",
-                  color: "var(--color-text)",
-                  paddingBottom: "5px",
-                }}
-              >
+              <Link key={link.name} to={`/${link.path}`} className="nav-link">
                 {link.name}
               </Link>
             ),
@@ -153,21 +57,11 @@ const Header = () => {
 
           {/* Others Dropdown */}
           <div
-            style={{ position: "relative" }}
+            className="dropdown-container"
             onMouseEnter={() => setIsOthersOpen(true)}
             onMouseLeave={() => setIsOthersOpen(false)}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "5px",
-                fontWeight: "500",
-                color: "var(--color-text)",
-                cursor: "pointer",
-                paddingBottom: "5px",
-              }}
-            >
+            <div className="dropdown-trigger">
               Others <ChevronDown size={16} />
             </div>
             {isOthersOpen && (
@@ -186,7 +80,6 @@ const Header = () => {
         <button
           className="mobile-toggle"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          style={{ background: "none", border: "none", cursor: "pointer" }}
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -194,35 +87,14 @@ const Header = () => {
 
       {/* Mobile Nav Overlay */}
       {isMenuOpen && (
-        <div
-          style={{
-            position: "absolute",
-            top: "80px",
-            left: 0,
-            width: "100%",
-            backgroundColor: "#fff",
-            padding: "20px",
-            boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            zIndex: 999,
-          }}
-        >
+        <div className="mobile-nav">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                style={{
-                  fontSize: "1.1rem",
-                  fontWeight: "500",
-                  color: isActive(link.path, link.isRoute)
-                    ? "var(--color-primary)"
-                    : "var(--color-text)",
-                  textAlign: "center",
-                }}
+                className={`mobile-nav-link ${isActive(link.path, link.isRoute) ? "active" : ""}`}
               >
                 {link.name}
               </Link>
@@ -231,12 +103,7 @@ const Header = () => {
                 key={link.name}
                 href={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                style={{
-                  fontSize: "1.1rem",
-                  fontWeight: "500",
-                  color: "var(--color-text)",
-                  textAlign: "center",
-                }}
+                className="mobile-nav-link"
               >
                 {link.name}
               </a>
@@ -245,12 +112,7 @@ const Header = () => {
                 key={link.name}
                 to={`/${link.path}`}
                 onClick={() => setIsMenuOpen(false)}
-                style={{
-                  fontSize: "1.1rem",
-                  fontWeight: "500",
-                  color: "var(--color-text)",
-                  textAlign: "center",
-                }}
+                className="mobile-nav-link"
               >
                 {link.name}
               </Link>
@@ -258,29 +120,14 @@ const Header = () => {
           )}
 
           {/* Others Mobile Dropdown */}
-          <div style={{ textAlign: "center" }}>
-            <div
-              style={{
-                fontSize: "1.1rem",
-                fontWeight: "500",
-                color: "var(--color-text)",
-                marginBottom: "10px",
-              }}
-            >
-              Others
-            </div>
+          <div className="mobile-others">
+            <div className="mobile-others-title">Others</div>
             {othersDropdown.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                style={{
-                  display: "block",
-                  fontSize: "1rem",
-                  fontWeight: "400",
-                  color: "var(--color-text-light)",
-                  padding: "8px 0",
-                }}
+                className="mobile-others-link"
               >
                 {item.name}
               </Link>

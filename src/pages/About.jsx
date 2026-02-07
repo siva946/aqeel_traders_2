@@ -6,29 +6,18 @@ const About = () => {
   return (
     <div className="page-content section-padding">
       <div className="container">
-        <div className="text-center" style={{ marginBottom: "60px" }}>
-          <h1 style={{ fontSize: "3rem" }}>About Us</h1>
-          <p
-            style={{
-              maxWidth: "600px",
-              margin: "0 auto",
-              color: "var(--color-text-light)",
-            }}
-          >
+        <div className="text-center section-header">
+          <h1 className="page-title">About Us</h1>
+          <p className="section-description">
             Dedicated to sourcing, processing, and exporting premium food
             products worldwide.
           </p>
         </div>
 
-        <div
-          className="grid grid-2"
-          style={{ gap: "60px", alignItems: "center", marginBottom: "80px" }}
-        >
-          <div>
-            <h2 style={{ marginBottom: "20px" }}>Who We Are</h2>
-            <p style={{ marginBottom: "20px", fontSize: "1.1rem" }}>
-              {companyInfo.description}
-            </p>
+        <div className="grid grid-2 about-grid">
+          <div className="about-content">
+            <h2>Who We Are</h2>
+            <p>{companyInfo.description}</p>
             <p>
               Based in India, we have established a strong network of suppliers
               and farmers, ensuring that we only export the finest quality
@@ -36,25 +25,16 @@ const About = () => {
               preferred partner for international buyers.
             </p>
           </div>
-          <div
-            style={{
-              backgroundColor: "#f4f4f4",
-              padding: "40px",
-              borderRadius: "8px",
-            }}
-          >
-            <h3 style={{ marginBottom: "20px" }}>Our Mission</h3>
-            <p style={{ fontStyle: "italic", marginBottom: "30px" }}>
-              "{companyInfo.mission}"
-            </p>
-
-            <h3 style={{ marginBottom: "20px" }}>Our Vision</h3>
-            <p style={{ fontStyle: "italic" }}>"{companyInfo.vision}"</p>
+          <div className="mission-vision-box">
+            <h3>Our Mission</h3>
+            <p>"{companyInfo.mission}"</p>
+            <h3>Our Vision</h3>
+            <p>"{companyInfo.vision}"</p>
           </div>
         </div>
 
-        <div style={{}}>
-          <h2 className="text-center" style={{ marginBottom: "40px" }}>
+        <div>
+          <h2 className="text-center destinations-title">
             Why Choose Aqeel Traders?
           </h2>
           <div className="grid grid-3">
@@ -66,28 +46,13 @@ const About = () => {
               "Long-term partnerships",
               "Ethical business practices",
             ].map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  padding: "30px",
-                  border: "1px solid #eee",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.borderColor = "var(--color-secondary)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.borderColor = "#eee")
-                }
-              >
+              <div key={index} className="why-choose-card">
                 <CheckCircle
                   size={32}
                   color="var(--color-secondary)"
-                  style={{ marginBottom: "15px" }}
+                  className="why-choose-icon"
                 />
-                <h4 style={{ fontSize: "1.2rem" }}>{item}</h4>
+                <h4 className="why-choose-title">{item}</h4>
               </div>
             ))}
           </div>

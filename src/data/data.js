@@ -18,6 +18,25 @@ import mustard_seeds from "../assets/products/mustard_seeds.webp"
 import millets from "../assets/products/millets.webp"
 import non_basmati_rice from "../assets/products/non_basmati_rice.webp"
 import red_lintal from "../assets/products/red_lintal.webp"
+import black_gram_urad from "../assets/products/black_gram_urad.webp"
+import green_gram_moong from "../assets/products/green_gram_moong.webp"
+import toor_dhal from "../assets/products/toor_dhal.webp"
+import kidney_beans from "../assets/products/kidney_beans.webp"
+import groundnut from "../assets/products/groundnut.webp"
+import groundnut_oil from "../assets/products/groundnut_oil.webp"
+import sesame_seeds from "../assets/products/Sesame Seeds (White & Black).webp"
+import soybean from "../assets/products/soybean.webp"
+import sunflower_seeds from "../assets/products/sunflower_seeds.webp"
+import mustard_seed_oil from "../assets/products/mustard_seed_oil.webp"
+import edible_oils from "../assets/products/edible_oils_sunflower_groundnut_seasame.webp"
+import cashew_nuts from "../assets/products/cashew_nuts.webp"
+import almonds from "../assets/products/almonds.webp"
+import raisins from "../assets/products/raisins.webp"
+import dates from "../assets/products/dates.webp"
+import walnuts from "../assets/products/walnuts.webp"
+import pista from "../assets/products/pista.webp"
+import ready_to_cook_spice_mixes from "../assets/products/Ready_to_cook_spice_mixes.webp"
+import mixed_pickles from "../assets/products/mixed_pickles.webp"
 
 
 export const products = [
@@ -57,7 +76,6 @@ export const products = [
       "Green Gram (Moong)",
       "Black Gram (Urad)",
       "Toor Dal",
-      "Masoor Dal",
       "Kidney Beans (Rajma)",
     ],
   },
@@ -125,6 +143,25 @@ export const productImages = [
   {name: "millet", src: millets},
   {name: "chickpea", src: chickpea},
   {name: "red_lintal", src: red_lintal},
+  {name: "black_gram_urad", src: black_gram_urad},
+  {name: "green_gram_moong", src: green_gram_moong},
+  {name: "toor_dhal", src: toor_dhal},
+  {name: "kidney_beans", src: kidney_beans},
+  {name: "groundnut", src: groundnut},
+  {name: "groundnut_oil", src: groundnut_oil},
+  {name: "sesame_seeds", src: sesame_seeds},
+  {name: "soybean", src: soybean},
+  {name: "sunflower_seeds", src: sunflower_seeds},
+  {name: "mustard_seed_oil", src: mustard_seed_oil},
+  {name: "edible_oils", src: edible_oils},
+  {name: "cashew_nuts", src: cashew_nuts},
+  {name: "almonds", src: almonds},
+  {name: "raisins", src: raisins},
+  {name: "dates", src: dates},
+  {name: "walnuts", src: walnuts},
+  {name: "pista", src: pista},
+  {name: "ready_to_cook_spice_mixes", src: ready_to_cook_spice_mixes},
+  {name: "mixed_pickles", src: mixed_pickles},
 ];
 
 export const getProductImage = (productName) => {
@@ -159,6 +196,24 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("millet")) return millets;
   if (normalizedName.includes("chickpea")) return chickpea;
   if (normalizedName.includes("red lentil")) return red_lintal;
+  if (normalizedName.includes("black gram") || normalizedName.includes("urad")) return black_gram_urad;
+  if (normalizedName.includes("green gram") || normalizedName.includes("moong")) return green_gram_moong;
+  if (normalizedName.includes("toor")) return toor_dhal;
+  if (normalizedName.includes("kidney beans") || normalizedName.includes("rajma")) return kidney_beans;
+  if (normalizedName.includes("groundnut oil")) return groundnut;
+  if (normalizedName.includes("sesame seeds")) return sesame_seeds;
+  if (normalizedName.includes("soybean")) return soybean;
+  if (normalizedName.includes("sunflower seeds")) return sunflower_seeds;
+  if (normalizedName.includes("mustard oil") && normalizedName.includes("oil")) return mustard_seed_oil;
+  if (normalizedName.includes("edible_oils")) return edible_oils;
+  if (normalizedName.includes("cashew")) return cashew_nuts;
+  if (normalizedName.includes("almond")) return almonds;
+  if (normalizedName.includes("raisin")) return raisins;
+  if (normalizedName.includes("date")) return dates;
+  if (normalizedName.includes("walnut")) return walnuts;
+  if (normalizedName.includes("pistachio")) return pista;
+  if (normalizedName.includes("ready-to-cook") || normalizedName.includes("spice mix")) return ready_to_cook_spice_mixes;
+  if (normalizedName.includes("pickle")) return mixed_pickles;
 
   return null;
 };
@@ -196,6 +251,7 @@ export const exportDestinations = [
 export const companyInfo = {
   name: "Aqeel Traders",
   tagline: "Global Exporters of Premium Food Products from India",
+  tagline2:"Exporter of agro products",
   description:
     "Aqeel Traders is a trusted export and import company specializing in a wide range of high-quality food products from India. We supply spices, grains, pulses, oil seeds, processed foods, and agro commodities to global markets with a strong focus on quality, reliability, and customer satisfaction.",
   mission:

@@ -158,11 +158,25 @@ header {
   font-family: var(--font-heading);
 }
 
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--color-primary);
+  line-height: 1;
+}
+
+.logo-tagline {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  line-height: 1;
 }
 
 .desktop-nav {
@@ -781,6 +795,9 @@ footer {
 @media (max-width: 425px) {
   .logo-text {
     font-size: 1.2rem;
+  }
+  .logo-tagline {
+    font-size: 0.65rem;
   }
   .hero-title {
     font-size: 1.8rem;

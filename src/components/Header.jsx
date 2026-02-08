@@ -30,7 +30,10 @@ const Header = () => {
       <div className="container header-container">
         <Link to="/" className="logo-link">
           <div className="logo-circle">AT</div>
-          <span className="logo-text">{companyInfo.name}</span>
+          <div className="logo-content">
+            <span className="logo-text">{companyInfo.name}</span>
+            <span className="logo-tagline">{companyInfo.tagline2}</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

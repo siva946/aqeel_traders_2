@@ -176,6 +176,12 @@ export const getProductImage = (productName) => {
   if (directMatch) return directMatch.src;
 
   // Specific mapping for complex names
+  if (normalizedName.includes("non-basmati")) return non_basmati_rice;
+  if (normalizedName.includes("basmati") && !normalizedName.includes("non")) return basmati_rice;
+  if (normalizedName.includes("edible oil")) return edible_oils;
+  if (normalizedName.includes("groundnut oil") || normalizedName.includes("sesame oil") || normalizedName.includes("sunflower oil")) return edible_oils;
+  if (normalizedName.includes("mustard") && normalizedName.includes("oil")) return mustard_seed_oil;
+  if (normalizedName.includes("groundnut") && !normalizedName.includes("oil")) return groundnut;
   if (normalizedName.includes("black pepper")) return black_pepper;
   if (normalizedName.includes("cardamom")) return cardamom;
   if (normalizedName.includes("clove")) return cloves;
@@ -186,12 +192,10 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("turmeric")) return turmeric;
   if (normalizedName.includes("coriander")) return coriander_seeds;
   if (normalizedName.includes("cumin")) return cumin_seeds;
-  if (normalizedName.includes("mustard seeds")) return mustard_seeds; 
+  if (normalizedName.includes("mustard seeds") && !normalizedName.includes("oil")) return mustard_seeds; 
   if (normalizedName.includes("fennel seeds")) return fennal_seeds;
-  if (normalizedName.includes("basmati_rice")) return basmati_rice;
-  if (normalizedName.includes("non basmati")) return non_basmati_rice;
   if (normalizedName.includes("wheat")) return wheat;
-  if (normalizedName.includes("corn")) return corn;
+  if (normalizedName.includes("corn") || normalizedName.includes("maize")) return corn;
   if (normalizedName.includes("barley")) return barley;
   if (normalizedName.includes("millet")) return millets;
   if (normalizedName.includes("chickpea")) return chickpea;
@@ -200,12 +204,9 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("green gram") || normalizedName.includes("moong")) return green_gram_moong;
   if (normalizedName.includes("toor")) return toor_dhal;
   if (normalizedName.includes("kidney beans") || normalizedName.includes("rajma")) return kidney_beans;
-  if (normalizedName.includes("groundnut oil")) return groundnut;
   if (normalizedName.includes("sesame seeds")) return sesame_seeds;
   if (normalizedName.includes("soybean")) return soybean;
   if (normalizedName.includes("sunflower seeds")) return sunflower_seeds;
-  if (normalizedName.includes("mustard oil") && normalizedName.includes("oil")) return mustard_seed_oil;
-  if (normalizedName.includes("edible_oils")) return edible_oils;
   if (normalizedName.includes("cashew")) return cashew_nuts;
   if (normalizedName.includes("almond")) return almonds;
   if (normalizedName.includes("raisin")) return raisins;

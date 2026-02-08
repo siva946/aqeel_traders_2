@@ -128,21 +128,31 @@ const Home = () => {
             </p>
           </div>
 
-          {products.slice(0, 4).map((category, index) => (
-            <div key={index} className="category-section">
-              <h3 className="category-title">{category.category}</h3>
-              <div className="grid grid-3 products-grid">
-                {category.items.slice(0, 3).map((item, i) => (
+          <div className="products-carousel-wrapper">
+            <div className="products-carousel-track">
+              {[...products.slice(0, 4).flatMap(cat => 
+                cat.items.slice(0, 3).map(item => ({
+                  name: item,
+                  category: cat.category,
+                  image: getProductImage(item)
+                }))
+              ), ...products.slice(0, 4).flatMap(cat => 
+                cat.items.slice(0, 3).map(item => ({
+                  name: item,
+                  category: cat.category,
+                  image: getProductImage(item)
+                }))
+              )].map((product, idx) => (
+                <div key={idx} className="carousel-product-card">
                   <ProductCard
-                    key={i}
-                    name={item}
-                    category={category.category}
-                    image={getProductImage(item)}
+                    name={product.name}
+                    category={product.category}
+                    image={product.image}
                   />
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
 
           <div className="text-center view-more-container">
             <Link to="/products" className="btn btn-primary view-more-btn">

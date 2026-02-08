@@ -571,7 +571,7 @@ footer {
 .products-carousel-track {
   display: flex;
   gap: 30px;
-  animation: scroll-products 40s linear infinite;
+  animation: scroll-products 5000ms linear infinite;
 }
 
 .products-carousel-track:hover {
@@ -581,6 +581,24 @@ footer {
 .carousel-product-card {
   flex: 0 0 300px;
   min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .carousel-product-card {
+    flex: 0 0 250px;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-product-card {
+    flex: 0 0 200px;
+    min-width: 200px;
+  }
+  
+  .products-carousel-track {
+    gap: 20px;
+  }
 }
 
 @keyframes scroll-products {
@@ -948,5 +966,96 @@ footer {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp svg {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
+  }
+}
+
+/* Product Card WhatsApp Button */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 425px) {
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-whatsapp svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .whatsapp-btn {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+  
+  .whatsapp-btn svg {
+    width: 14px;
+    height: 14px;
   }
 }

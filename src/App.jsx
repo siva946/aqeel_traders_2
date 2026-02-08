@@ -7,6 +7,7 @@ import ScrapMetal from "./pages/ScrapMetal";
 import Automobile from "./pages/Automobile";
 import StainlessSteel from "./pages/StainlessSteel";
 import ScrollToAnchor from "./components/ScrollToAnchor";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/others/stainless-steel" element={<StainlessSteel />} />
         </Routes>
       </Layout>
+      <FloatingWhatsApp />
     </Router>
   );
 }

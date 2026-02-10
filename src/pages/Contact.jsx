@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { companyInfo } from "../data/data";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneNumber = "919600417117";
+    const text = `*New Contact Form Submission*%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="page-content section-padding">
       <div className="container">
@@ -51,7 +61,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <h3>Send a Message</h3>
 
               <div className="form-group">
@@ -60,6 +70,9 @@ const Contact = () => {
                   type="text"
                   placeholder="John Doe"
                   className="form-input"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
                 />
               </div>
 
@@ -69,6 +82,9 @@ const Contact = () => {
                   type="email"
                   placeholder="john@example.com"
                   className="form-input"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
                 />
               </div>
 
@@ -78,11 +94,14 @@ const Contact = () => {
                   rows="5"
                   placeholder="Tell us about your requirements..."
                   className="form-textarea"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  required
                 ></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary form-submit">
-                Send Message
+                Send Enquiry
               </button>
             </form>
           </div>

@@ -37,6 +37,13 @@ import walnuts from "../assets/products/walnuts.webp"
 import pista from "../assets/products/pista.webp"
 import ready_to_cook_spice_mixes from "../assets/products/Ready_to_cook_spice_mixes.webp"
 import mixed_pickles from "../assets/products/mixed_pickles.webp"
+import papad from "../assets/products/papad.webp"
+import instant_food_mixes from "../assets/products/instant_food_mixes.webp"
+import snacks_and_namkeen_items from "../assets/products/snacks_and_namkeen_items.webp"
+import fresh_fruits_vegetables from "../assets/products/fresh_fruits_vegetables.webp"
+import dehydrated_onion_garlic from "../assets/products/dehydrated_onion_garlic.webp"
+import dehydrated_vegetables from "../assets/products/dehydrated_vegetables.webp"
+import frozen_foods from "../assets/products/frozen_foods.webp"
 
 
 export const products = [
@@ -86,7 +93,7 @@ export const products = [
       "Sesame Seeds (White & Black)",
       "Soybean",
       "Sunflower Seeds",
-      "Mustard Seeds",
+      "Mustard Seed Oil",
       "Edible Oils (Groundnut Oil, Sesame Oil, Sunflower Oil)",
     ],
   },
@@ -162,26 +169,51 @@ export const productImages = [
   {name: "pista", src: pista},
   {name: "ready_to_cook_spice_mixes", src: ready_to_cook_spice_mixes},
   {name: "mixed_pickles", src: mixed_pickles},
+  {name:"papad",src:papad},
+  {name:"instant_food_mixes",src:instant_food_mixes},
+  {name:"snacks_and_namkeen_items",src:snacks_and_namkeen_items},
+  {name: "fresh_fruits_vegetables",src:fresh_fruits_vegetables},
+  {name: "dehydrated_onion_garlic", src: dehydrated_onion_garlic},
+  {name: "dehydrated_vegetables", src: dehydrated_vegetables},
+  {name: "frozen_foods",src:frozen_foods}
+
 ];
 
 export const getProductImage = (productName) => {
-  const normalizedName = productName.toLowerCase();
+  if (!productName) return null;
 
-  // Direct matches
-  const directMatch = productImages.find(
-    (img) =>
-      normalizedName.includes(img.name.replace("_", " ")) ||
-      img.name.replace("_", " ").includes(normalizedName),
-  );
-  if (directMatch) return directMatch.src;
+  const normalizedName = productName
+    .toLowerCase()
+    .replace(/[-_]/g, " ")
+    .replace(/[^\w\s]/g, " ") // remove punctuation like commas
+    .replace(/\s+/g, " ")
+    .trim();
 
-  // Specific mapping for complex names
-  if (normalizedName.includes("non-basmati")) return non_basmati_rice;
+  const normalizeImgName = (name) => name.replace(/_/g, " ");
+
+  // Prefer specific category/phrase matches before direct image-name matching
+  if (normalizedName.includes("non basmati") || normalizedName.includes("nonbasmati") || normalizedName.includes("non-basmati")) return non_basmati_rice;
   if (normalizedName.includes("basmati") && !normalizedName.includes("non")) return basmati_rice;
-  if (normalizedName.includes("edible oil")) return edible_oils;
-  if (normalizedName.includes("groundnut oil") || normalizedName.includes("sesame oil") || normalizedName.includes("sunflower oil")) return edible_oils;
+  if (normalizedName.includes("edible oil") || normalizedName.includes("edible oils")) return edible_oils;
   if (normalizedName.includes("mustard") && normalizedName.includes("oil")) return mustard_seed_oil;
   if (normalizedName.includes("groundnut") && !normalizedName.includes("oil")) return groundnut;
+
+  // Specific dehydrated matches before direct name matching
+  if (normalizedName.includes("dehydrated onion") || normalizedName.includes("dehydrated garlic") || normalizedName.includes("onion garlic") || (normalizedName.includes("onion") && normalizedName.includes("garlic"))) return dehydrated_onion_garlic;
+  if (normalizedName.includes("dehydrated vegetable") || normalizedName.includes("dehydrated vegetables")) return dehydrated_vegetables;
+
+  // Direct matches (normalized)
+  const directMatch = productImages.find((img) => {
+    const imgName = normalizeImgName(img.name);
+    return (
+      normalizedName === imgName ||
+      normalizedName.includes(imgName) ||
+      imgName.includes(normalizedName)
+    );
+  });
+  if (directMatch) return directMatch.src;
+
+  // Fallback specific mappings
   if (normalizedName.includes("black pepper")) return black_pepper;
   if (normalizedName.includes("cardamom")) return cardamom;
   if (normalizedName.includes("clove")) return cloves;
@@ -199,7 +231,7 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("barley")) return barley;
   if (normalizedName.includes("millet")) return millets;
   if (normalizedName.includes("chickpea")) return chickpea;
-  if (normalizedName.includes("red lentil")) return red_lintal;
+  if (normalizedName.includes("red lentil") || normalizedName.includes("red lentil")) return red_lintal;
   if (normalizedName.includes("black gram") || normalizedName.includes("urad")) return black_gram_urad;
   if (normalizedName.includes("green gram") || normalizedName.includes("moong")) return green_gram_moong;
   if (normalizedName.includes("toor")) return toor_dhal;
@@ -215,6 +247,12 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("pistachio")) return pista;
   if (normalizedName.includes("ready-to-cook") || normalizedName.includes("spice mix")) return ready_to_cook_spice_mixes;
   if (normalizedName.includes("pickle")) return mixed_pickles;
+  if (normalizedName.includes("papad")) return papad;
+  if (normalizedName.includes("instant food mixes") || normalizedName.includes("instant")) return instant_food_mixes;
+  if (normalizedName.includes("snacks and namkeen") || normalizedName.includes("snacks")) return snacks_and_namkeen_items;
+  if (normalizedName.includes("fresh fruits") || normalizedName.includes("fresh fruit") || normalizedName.includes("fresh vegetables") || normalizedName.includes("fresh vegetable")) return fresh_fruits_vegetables;
+  if (normalizedName.includes("dehydrated")) return dehydrated_vegetables;
+  if (normalizedName.includes("frozen")) return frozen_foods;
 
   return null;
 };

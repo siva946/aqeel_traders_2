@@ -166,6 +166,12 @@ header {
   gap: 10px;
 }
 
+.logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
 .logo-circle {
   width: 40px;
   height: 40px;
@@ -186,7 +192,7 @@ header {
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--color-primary);
@@ -194,7 +200,7 @@ header {
 }
 
 .logo-tagline {
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
   font-weight: 400;
   color: var(--color-text-light);
   line-height: 1;
@@ -571,7 +577,8 @@ footer {
 .products-carousel-track {
   display: flex;
   gap: 30px;
-  animation: scroll-products 5000ms linear infinite;
+  animation: scroll-products 40s linear infinite;
+  width: max-content;
 }
 
 .products-carousel-track:hover {
@@ -602,11 +609,11 @@ footer {
 }
 
 @keyframes scroll-products {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-50% - 15px));
   }
 }
 
@@ -863,11 +870,9 @@ footer {
 }
 
 @media (max-width: 425px) {
-  .logo-text {
-    font-size: 1.2rem;
-  }
-  .logo-tagline {
-    font-size: 0.65rem;
+  .logo-image {
+    width: 40px;
+    height: 40px;
   }
   .hero-title {
     font-size: 1.8rem;

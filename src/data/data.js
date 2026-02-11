@@ -44,7 +44,7 @@ import fresh_fruits_vegetables from "../assets/products/fresh_fruits_vegetables.
 import dehydrated_onion_garlic from "../assets/products/dehydrated_onion_garlic.webp"
 import dehydrated_vegetables from "../assets/products/dehydrated_vegetables.webp"
 import frozen_foods from "../assets/products/frozen_foods.webp"
-
+import logo from "/logo.jpeg"
 
 export const products = [
   {
@@ -288,6 +288,7 @@ export const exportDestinations = [
 ];
 
 export const companyInfo = {
+  logo: logo,
   name: "Aqeel Traders",
   tagline: "Global Exporters of Premium Food Products from India",
   tagline2:"Exporter of agro products",

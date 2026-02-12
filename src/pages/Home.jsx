@@ -13,6 +13,9 @@ import {
   MapPin,
   Phone,
   Mail,
+  Linkedin,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import {
   companyInfo,
@@ -37,9 +40,17 @@ const Home = () => {
             <Link to="/products" className="btn btn-primary">
               Explore Products
             </Link>
-            <a href="#contact" className="btn">
-              Contact Us
-            </a>
+            <div className="social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Linkedin size={24} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Instagram size={24} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <Facebook size={24} />
+              </a>
+            </div>
           </div>
         </div>
       </section>

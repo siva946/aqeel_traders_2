@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin, Instagram, Facebook } from "lucide-react";
 import { companyInfo } from "../data/data";
 
 const Footer = () => {
@@ -14,6 +14,17 @@ const Footer = () => {
             <p className="footer-description">
               Exporting premium quality Indian food products to the world.
             </p>
+            <div className="footer-social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
+                <Facebook size={20} />
+              </a>
+            </div>
           </div>
 
           <div>

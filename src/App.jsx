@@ -8,7 +8,6 @@ import Automobile from "./pages/Automobile";
 import StainlessSteel from "./pages/StainlessSteel";
 import ScrollToAnchor from "./components/ScrollToAnchor";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
-import "./App.css";
 
 function App() {
   return (

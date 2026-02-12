@@ -327,14 +327,14 @@ const Home = () => {
                     <p>{companyInfo.contact.email}</p>
                   </div>
                 </div>
-
                 <div className="contact-info-item">
                   <div className="contact-icon-wrapper">
                     <Phone size={24} color="var(--color-secondary)" />
                   </div>
                   <div className="contact-info-content">
                     <h4>Call Us</h4>
-                    <p>{companyInfo.contact.phone}</p>
+                    <p>{companyInfo.contact.phone1}</p>
+                    <p>{companyInfo.contact.phone2}</p>
                   </div>
                 </div>
               </div>

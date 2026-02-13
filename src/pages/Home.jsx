@@ -372,7 +372,7 @@ const Home = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary form-submit">
-                  Send Message
+                  Send Enquiry
                 </button>
               </form>
             </div>

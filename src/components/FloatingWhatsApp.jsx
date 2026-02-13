@@ -1,7 +1,7 @@
 import React from "react";
 
 const FloatingWhatsApp = () => {
-  const phoneNumber = "919600417117";
+  const phoneNumber = "916383618434";
   //import.meta.env.VITE_PHONE_1?.replace(/[^0-9]/g, "") || 
   const message = "Hi! I'd like to know more about your products and services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

@@ -41,13 +41,13 @@ const Home = () => {
               Explore Products
             </Link>
             <div className="social-links">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href="https://www.linkedin.com/in/aqeel-traders-7252103a7" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Linkedin size={24} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href="https://www.instagram.com/mr__samsul?igsh=MXBraHRmanpnbXdnMQ==" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Instagram size={24} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href="https://www.facebook.com/share/1bMzvD2VAf/" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Facebook size={24} />
               </a>
             </div>
@@ -334,7 +334,7 @@ const Home = () => {
                   <div className="contact-info-content">
                     <h4>Call Us</h4>
                     <p>{companyInfo.contact.phone1}</p>
-                    <p>{companyInfo.contact.phone2}</p>
+                    <p>{companyInfo.contact.phone2w}</p>
                   </div>
                 </div>
               </div>

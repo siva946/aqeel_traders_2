@@ -14,7 +14,7 @@ const ProductCard = ({ name, category, image }) => {
   };
 
   const handleWhatsAppClick = () => {
-    const phoneNumber =  "919600417117";
+    const phoneNumber =  "916383618434";
     //import.meta.env.VITE_PHONE_1?.replace(/[^0-9]/g, "") ||
     const message = `Hi! I'm interested in exporting *${name}* (${category}). Can you provide more details?`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

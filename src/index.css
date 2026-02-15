@@ -545,6 +545,16 @@ footer {
   transform: translateY(-3px);
 }
 
+.social-icon:nth-child(4) {
+  background-color: #25d366;
+}
+
+.social-icon:nth-child(4):hover {
+  background-color: #1da851;
+  transform: translateY(-3px);
+}
+
+
 /* Intro Section */
 .intro-grid {
   align-items: center;

@@ -16,6 +16,7 @@ import {
   Linkedin,
   Instagram,
   Facebook,
+  PhoneCall,
 } from "lucide-react";
 import {
   companyInfo,
@@ -49,6 +50,9 @@ const Home = () => {
               </a>
               <a href="https://www.facebook.com/share/1bMzvD2VAf/" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Facebook size={24} />
+              </a>
+              <a href="tel:+916383618434" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <PhoneCall size={24}/>
               </a>
             </div>
           </div>

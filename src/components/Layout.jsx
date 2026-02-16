@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import About from "../pages/About";
+import Home from "../pages/Home";
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +11,8 @@ const Layout = ({ children }) => {
     >
       <Header />
       <main style={{ flex: 1 }}>{children}</main>
+      {/* <Home/> */}
+      {/* <About /> */}
       <Footer />
     </div>
   );

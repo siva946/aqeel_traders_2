@@ -7,7 +7,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const phoneNumber = "919600417117";
+    const phoneNumber = "916383618434";
     const text = `*New Contact Form Submission*%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
     window.open(whatsappUrl, "_blank");
@@ -33,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div className="contact-info-content">
                   <h4>Our Location</h4>
-                  <p>{companyInfo.contact.location}</p>
+                  <p> Near M.V. Government Higher Secondary School Muthupattinam, Karaikudi, Tamil Nadu 630002</p>
                 </div>
               </div>
 
@@ -51,7 +51,7 @@ const Contact = () => {
 
           <div>
             <form className="contact-form" onSubmit={handleSubmit}>
-              <h3>Send a Message</h3>
+              <h3>Send a Enquiry</h3>
 
               <div className="form-group">
                 <label className="form-label">Your Name</label>

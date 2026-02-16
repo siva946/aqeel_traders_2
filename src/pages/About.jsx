@@ -4,7 +4,7 @@ import { CheckCircle } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="page-content section-padding">
+    <div className="page-content section-padding" >
       <div className="container">
         <div className="text-center section-header">
           <h1 className="page-title">About Us</h1>

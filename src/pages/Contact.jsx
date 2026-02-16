@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="page-content section-padding">
+    <div className="page-content section-padding" id="contact">
       <div className="container">
         <h1 className="text-center contact-title">Contact Us</h1>
 

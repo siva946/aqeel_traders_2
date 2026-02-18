@@ -8,18 +8,12 @@ import {
   ShieldCheck,
   Truck,
   Linkedin,
-  Instagram,
   Facebook,
   PhoneCall,
+  MailOpen,
 } from "lucide-react";
 
-import {
-  companyInfo,
-  products,
-  getProductImage,
-} from "../data/data";
-
-import ProductCard from "../components/ProductCard";
+import { companyInfo } from "../data/data";
 import Contact from "./Contact";
 import About from "./About";
 import Services from "./Services";
@@ -27,7 +21,6 @@ import Productview from "./Productview";
 
 /* ---------------- ANIMATION VARIANTS ---------------- */
 
-// Fade up animation
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   visible: {
@@ -37,41 +30,37 @@ const fadeUp = {
   },
 };
 
-// Stagger container (grid animation)
 const staggerContainer = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.2 } },
 };
 
-// Floating animation (image)
 const floatAnimation = {
   animate: {
     y: [0, -15, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
   },
 };
 
 const Home = () => {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="hero-section">
+      {/* ================= HERO SECTION (SEO H1) ================= */}
+      <section
+        className="hero-section"
+        itemScope
+        itemType="https://schema.org/Organization"
+      >
         <div className="container">
           <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: -60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            itemProp="name"
           >
-            Welcome to <span className="text-gold">{companyInfo.name}</span>
+            Welcome to
+            <span className="text-gold"> Aqeel Traders</span>
           </motion.h1>
 
           <motion.p
@@ -79,9 +68,18 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
+            itemProp="description"
           >
-            {companyInfo.tagline}
+            Global Exporters of Premium Food Products from India
           </motion.p>
+
+          {/* Hidden SEO Content */}
+          <p className="sr-only">
+            Trusted Indian food exporter based in Karaikudi, Tamil Nadu.
+            Exporting turmeric, chilli, cumin, coriander, basmati rice, lentils
+            and agricultural commodities to Middle East, Europe, Africa and
+            Asian countries.
+          </p>
 
           <motion.div
             className="hero-buttons"
@@ -90,15 +88,20 @@ const Home = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <Link to="/products" className="btn btn-primary">
-              Explore Products
+              Explore Export Products
             </Link>
 
             <div className="social-links">
               <a href="https://www.linkedin.com/in/aqeel-traders-7252103a7" target="_blank" rel="noreferrer" className="social-icon">
                 <Linkedin size={24} />
               </a>
-              <a href="https://www.instagram.com/mr__samsul" target="_blank" rel="noreferrer" className="social-icon">
-                <Instagram size={24} />
+              <a
+                href="mailto:aqeeltraders7557@gmail.com"
+                className="social-icon"
+                aria-label="Send email to Aqeel Traders export team"
+                title="Email Aqeel Traders"
+              >
+                <MailOpen size={24} />
               </a>
               <a href="https://www.facebook.com/share/1bMzvD2VAf/" target="_blank" rel="noreferrer" className="social-icon">
                 <Facebook size={24} />
@@ -111,7 +114,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* INTRO SECTION */}
+      {/* ================= INTRO SECTION ================= */}
       <motion.section
         className="section-padding"
         initial="hidden"
@@ -122,11 +125,25 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-2 intro-grid">
             <div>
-              <h4 className="text-gold intro-subtitle">Allowed & Trusted</h4>
+              <h4 className="text-gold intro-subtitle">Trusted Export Partner</h4>
+
               <h2 className="intro-title">
-                Exporting Excellence from India to the World
+                Trusted Indian Food Export Company for Global Importers
               </h2>
-              <p className="intro-description">{companyInfo.description}</p>
+
+              <p className="intro-description">
+                Aqeel Traders is a reliable Indian exporter of agricultural and
+                food products. We specialize in exporting spices, rice, pulses
+                and grains directly from trusted farms in India. Our focus is
+                quality control, competitive pricing, safe packaging and timely
+                international shipping.
+              </p>
+
+              <p className="sr-only">
+                We supply bulk turmeric, chilli powder, cumin seeds, coriander
+                seeds, basmati rice, non basmati rice, lentils and other food
+                commodities worldwide.
+              </p>
 
               <ul className="intro-list">
                 <li className="intro-list-item">
@@ -142,19 +159,23 @@ const Home = () => {
               </a>
             </div>
 
-            {/* Floating Image */}
             <motion.div
               className="intro-image-wrapper"
               variants={floatAnimation}
               animate="animate"
             >
-              <img src="/hero_spices.png" alt="spices" className="intro-image" />
+              <img
+                src="/hero_spices.png"
+                alt="Indian spices exporter"
+                className="intro-image"
+                loading="lazy"
+              />
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* FEATURES */}
+      {/* ================= FEATURES ================= */}
       <motion.section
         className="features-section"
         initial="hidden"
@@ -162,10 +183,7 @@ const Home = () => {
         viewport={{ once: true }}
       >
         <div className="container">
-          <motion.div
-            className="grid grid-4 features-grid"
-            variants={staggerContainer}
-          >
+          <motion.div className="grid grid-4 features-grid" variants={staggerContainer}>
             <motion.div variants={fadeUp}>
               <Award size={48} />
               <h3>Premium Quality</h3>
@@ -196,10 +214,8 @@ const Home = () => {
       {/* PRODUCTS */}
       <Productview />
 
-      {/* OTHER SECTIONS */}
-
+      {/* SERVICES / ABOUT / CONTACT */}
       <Services />
-
       <About />
       <Contact />
     </>

@@ -13,16 +13,11 @@
   --font-body: "Inter", sans-serif;
 }
 
-.seo-hidden {
+.sr-only {
   display: none;
 }
 
-.seo-text {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  margin-top: 20px;
-}
+
 
 * {
   box-sizing: border-box;

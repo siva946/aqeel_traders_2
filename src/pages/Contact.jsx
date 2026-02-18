@@ -43,7 +43,14 @@ const Contact = () => {
                 </div>
                 <div className="contact-info-content">
                   <h4>Email Us</h4>
-                  <p>{companyInfo.contact.email}</p>
+                  <a
+                    href="mailto:aqeeltraders7557@gmail.com"
+                    className="contact-email"
+                    title="Email Aqeel Traders"
+                  >
+                    aqeeltraders7557@gmail.com
+                  </a>
+
                 </div>
               </div>
             </div>

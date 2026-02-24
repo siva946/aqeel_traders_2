@@ -52,6 +52,32 @@ const Contact = () => {
                   </a>
 
                 </div>
+
+              </div>
+              <div className="contact-info-item">
+                <div className="contact-icon-wrapper">
+                  <Phone size={24} color="var(--color-secondary)" />
+                </div>
+                <div className="contact-info-content">
+                  <h4>Phone Number</h4>
+                  <a
+                    href="tel:916383618434"
+                    className="contact-email"
+                    title="Email Aqeel Traders"
+                  >
+                    +916383618434
+                  </a>
+                  <a
+                    href="tel:919443187557"
+                    style={{ display: "flex" }}
+                    className="contact-email "
+                    title="Email Aqeel Traders"
+                  >
+                    +919443187557
+                  </a>
+
+                </div>
+
               </div>
             </div>
           </div>

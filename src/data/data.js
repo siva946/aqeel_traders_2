@@ -1,49 +1,49 @@
-import black_pepper from "/products/black_pepper.webp";
-import cardamom from "/products/cardamom.webp";
-import cloves from "/products/cloves.webp";
-import cinnamon from "/products/cinnamon.webp";
-import fenugureek_seeds from "/products/fengureek_seeds.webp";
-import dry_red_chilli from "/products/dry_red_chili.webp";
-import chilli_powder from "/products/chilli_powder.webp";
-import turmeric from "/products/turmeric.webp";
-import coriander_seeds from "/products/coriander.webp";
-import cumin_seeds from "/products/cumin_seeds.webp";
-import barley from "/products/barley.webp"
-import basmati_rice from "/products/basmati_rice.webp"
-import wheat from "/products/wheat.webp"
-import chickpea from "/products/chickpea.webp"
-import corn from "/products/corn.webp"
-import fennal_seeds from "/products/fennal_seeds.webp"
-import mustard_seeds from "/products/mustard_seeds.webp"
-import millets from "/products/millets.webp"
-import non_basmati_rice from "/products/non_basmati_rice.webp"
-import red_lintal from "/products/red_lintal.webp"
-import black_gram_urad from "/products/black_gram_urad.webp"
-import green_gram_moong from "/products/green_gram_moong.webp"
-import toor_dhal from "/products/toor_dhal.webp"
-import kidney_beans from "/products/kidney_beans.webp"
-import groundnut from "/products/groundnut.webp"
-import groundnut_oil from "/products/groundnut_oil.webp"
-import sesame_seeds from "/products/Sesame Seeds (White & Black).webp"
-import soybean from "/products/soybean.webp"
-import sunflower_seeds from "/products/sunflower_seeds.webp"
-import mustard_seed_oil from "/products/mustard_seed_oil.webp"
-import edible_oils from "/products/edible_oils_sunflower_groundnut_seasame.webp"
-import cashew_nuts from "/products/cashew_nuts.webp"
-import almonds from "/products/almonds.webp"
-import raisins from "/products/raisins.webp"
-import dates from "/products/dates.webp"
-import walnuts from "/products/walnuts.webp"
-import pista from "/products/pista.webp"
-import ready_to_cook_spice_mixes from "/products/Ready_to_cook_spice_mixes.webp"
-import mixed_pickles from "/products/mixed_pickles.webp"
-import papad from "/products/papad.webp"
-import instant_food_mixes from "/products/instant_food_mixes.webp"
-import snacks_and_namkeen_items from "/products/snacks_and_namkeen_items.webp"
-import fresh_fruits_vegetables from "/products/fresh_fruits_vegetables.webp"
-import dehydrated_onion_garlic from "/products/dehydrated_onion_garlic.webp"
-import dehydrated_vegetables from "/products/dehydrated_vegetables.webp"
-import frozen_foods from "/products/frozen_foods.webp"
+import black_pepper from "/ASSET/products/black_pepper.webp";
+import cardamom from "/ASSET/products/cardamom.webp";
+import cloves from "/ASSET/products/cloves.webp";
+import cinnamon from "/ASSET/products/cinnamon.webp";
+import fenugureek_seeds from "/ASSET/products/fengureek_seeds.webp";
+import dry_red_chilli from "/ASSET/products/dry_red_chili.webp";
+import chilli_powder from "/ASSET/products/chilli_powder.webp";
+import turmeric from "/ASSET/products/turmeric.webp";
+import coriander_seeds from "/ASSET/products/coriander.webp";
+import cumin_seeds from "/ASSET/products/cumin_seeds.webp";
+import barley from "/ASSET/products/barley.webp"
+import basmati_rice from "/ASSET/products/basmati_rice.webp"
+import wheat from "/ASSET/products/wheat.webp"
+import chickpea from "/ASSET/products/chickpea.webp"
+import corn from "/ASSET/products/corn.webp"
+import fennal_seeds from "/ASSET/products/fennal_seeds.webp"
+import mustard_seeds from "/ASSET/products/mustard_seeds.webp"
+import millets from "/ASSET/products/millets.webp"
+import non_basmati_rice from "/ASSET/products/non_basmati_rice.webp"
+import red_lintal from "/ASSET/products/red_lintal.webp"
+import black_gram_urad from "/ASSET/products/black_gram_urad.webp"
+import green_gram_moong from "/ASSET/products/green_gram_moong.webp"
+import toor_dhal from "/ASSET/products/toor_dhal.webp"
+import kidney_beans from "/ASSET/products/kidney_beans.webp"
+import groundnut from "/ASSET/products/groundnut.webp"
+import groundnut_oil from "/ASSET/products/groundnut_oil.webp"
+import sesame_seeds from "/ASSET/products/Sesame Seeds (White & Black).webp"
+import soybean from "/ASSET/products/soybean.webp"
+import sunflower_seeds from "/ASSET/products/sunflower_seeds.webp"
+import mustard_seed_oil from "/ASSET/products/mustard_seed_oil.webp"
+import edible_oils from "/ASSET/products/edible_oils_sunflower_groundnut_seasame.webp"
+import cashew_nuts from "/ASSET/products/cashew_nuts.webp"
+import almonds from "/ASSET/products/almonds.webp"
+import raisins from "/ASSET/products/raisins.webp"
+import dates from "/ASSET/products/dates.webp"
+import walnuts from "/ASSET/products/walnuts.webp"
+import pista from "/ASSET/products/pista.webp"
+import ready_to_cook_spice_mixes from "/ASSET/products/Ready_to_cook_spice_mixes.webp"
+import mixed_pickles from "/ASSET/products/mixed_pickles.webp"
+import papad from "/ASSET/products/papad.webp"
+import instant_food_mixes from "/ASSET/products/instant_food_mixes.webp"
+import snacks_and_namkeen_items from "/ASSET/products/snacks_and_namkeen_items.webp"
+import fresh_fruits_vegetables from "/ASSET/products/fresh_fruits_vegetables.webp"
+import dehydrated_onion_garlic from "/ASSET/products/dehydrated_onion_garlic.webp"
+import dehydrated_vegetables from "/ASSET/products/dehydrated_vegetables.webp"
+import frozen_foods from "/ASSET/products/frozen_foods.webp"
 import logo from "/logo.jpeg"
 
 export const products = [
@@ -140,42 +140,42 @@ export const productImages = [
   { name: "turmeric", src: turmeric },
   { name: "coriander_seeds", src: coriander_seeds },
   { name: "cumin_seeds", src: cumin_seeds },
-  {name: "mustard_seeds", src: mustard_seeds},
-  {name: "fennel_seeds", src: fennal_seeds},
-  {name: "basmati_rice", src: basmati_rice},
-  {name: "non_basmati_rice", src: non_basmati_rice},
-  {name: "wheat", src: wheat},
-  {name: "corn", src: corn},
-  {name: "barley", src: barley},
-  {name: "millet", src: millets},
-  {name: "chickpea", src: chickpea},
-  {name: "red_lintal", src: red_lintal},
-  {name: "black_gram_urad", src: black_gram_urad},
-  {name: "green_gram_moong", src: green_gram_moong},
-  {name: "toor_dhal", src: toor_dhal},
-  {name: "kidney_beans", src: kidney_beans},
-  {name: "groundnut", src: groundnut},
-  {name: "groundnut_oil", src: groundnut_oil},
-  {name: "sesame_seeds", src: sesame_seeds},
-  {name: "soybean", src: soybean},
-  {name: "sunflower_seeds", src: sunflower_seeds},
-  {name: "mustard_seed_oil", src: mustard_seed_oil},
-  {name: "edible_oils", src: edible_oils},
-  {name: "cashew_nuts", src: cashew_nuts},
-  {name: "almonds", src: almonds},
-  {name: "raisins", src: raisins},
-  {name: "dates", src: dates},
-  {name: "walnuts", src: walnuts},
-  {name: "pista", src: pista},
-  {name: "ready_to_cook_spice_mixes", src: ready_to_cook_spice_mixes},
-  {name: "mixed_pickles", src: mixed_pickles},
-  {name:"papad",src:papad},
-  {name:"instant_food_mixes",src:instant_food_mixes},
-  {name:"snacks_and_namkeen_items",src:snacks_and_namkeen_items},
-  {name: "fresh_fruits_vegetables",src:fresh_fruits_vegetables},
-  {name: "dehydrated_onion_garlic", src: dehydrated_onion_garlic},
-  {name: "dehydrated_vegetables", src: dehydrated_vegetables},
-  {name: "frozen_foods",src:frozen_foods}
+  { name: "mustard_seeds", src: mustard_seeds },
+  { name: "fennel_seeds", src: fennal_seeds },
+  { name: "basmati_rice", src: basmati_rice },
+  { name: "non_basmati_rice", src: non_basmati_rice },
+  { name: "wheat", src: wheat },
+  { name: "corn", src: corn },
+  { name: "barley", src: barley },
+  { name: "millet", src: millets },
+  { name: "chickpea", src: chickpea },
+  { name: "red_lintal", src: red_lintal },
+  { name: "black_gram_urad", src: black_gram_urad },
+  { name: "green_gram_moong", src: green_gram_moong },
+  { name: "toor_dhal", src: toor_dhal },
+  { name: "kidney_beans", src: kidney_beans },
+  { name: "groundnut", src: groundnut },
+  { name: "groundnut_oil", src: groundnut_oil },
+  { name: "sesame_seeds", src: sesame_seeds },
+  { name: "soybean", src: soybean },
+  { name: "sunflower_seeds", src: sunflower_seeds },
+  { name: "mustard_seed_oil", src: mustard_seed_oil },
+  { name: "edible_oils", src: edible_oils },
+  { name: "cashew_nuts", src: cashew_nuts },
+  { name: "almonds", src: almonds },
+  { name: "raisins", src: raisins },
+  { name: "dates", src: dates },
+  { name: "walnuts", src: walnuts },
+  { name: "pista", src: pista },
+  { name: "ready_to_cook_spice_mixes", src: ready_to_cook_spice_mixes },
+  { name: "mixed_pickles", src: mixed_pickles },
+  { name: "papad", src: papad },
+  { name: "instant_food_mixes", src: instant_food_mixes },
+  { name: "snacks_and_namkeen_items", src: snacks_and_namkeen_items },
+  { name: "fresh_fruits_vegetables", src: fresh_fruits_vegetables },
+  { name: "dehydrated_onion_garlic", src: dehydrated_onion_garlic },
+  { name: "dehydrated_vegetables", src: dehydrated_vegetables },
+  { name: "frozen_foods", src: frozen_foods }
 
 ];
 
@@ -224,7 +224,7 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("turmeric")) return turmeric;
   if (normalizedName.includes("coriander")) return coriander_seeds;
   if (normalizedName.includes("cumin")) return cumin_seeds;
-  if (normalizedName.includes("mustard seeds") && !normalizedName.includes("oil")) return mustard_seeds; 
+  if (normalizedName.includes("mustard seeds") && !normalizedName.includes("oil")) return mustard_seeds;
   if (normalizedName.includes("fennel seeds")) return fennal_seeds;
   if (normalizedName.includes("wheat")) return wheat;
   if (normalizedName.includes("corn") || normalizedName.includes("maize")) return corn;
@@ -291,7 +291,7 @@ export const companyInfo = {
   logo: logo,
   name: "Aqeel Traders",
   tagline: "Global Exporters of Premium Food Products from India",
-  tagline2:"Exporter of agro products",
+  tagline2: "Exporter of agro products",
   description:
     "Aqeel Traders is a trusted export and import company specializing in a wide range of high-quality food products from India. We supply spices, grains, pulses, oil seeds, processed foods, and agro commodities to global markets with a strong focus on quality, reliability, and customer satisfaction.",
   mission:

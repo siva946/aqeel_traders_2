@@ -45,6 +45,15 @@ import dehydrated_onion_garlic from "/ASSET/products/dehydrated_onion_garlic.web
 import dehydrated_vegetables from "/ASSET/products/dehydrated_vegetables.webp"
 import frozen_foods from "/ASSET/products/frozen_foods.webp"
 import logo from "/logo.jpeg"
+import aluminium_scrap from "/ASSET/products/aluminium_scrap.webp"
+import copper_scrap from "/ASSET/products/copper_scrap.webp"
+import scrap_metal from "/ASSET/products/scrap_metal.webp"
+import brake_systems_parts from "/ASSET/products/brake_systems_parts.webp"
+import brass_scrap from "/ASSET/products/brass_scrap.webp"
+import auto_parts from "/ASSET/products/auto_parts.webp"
+import engine_parts from "/ASSET/products/engine_parts.webp"
+import mixed_metal_scrap from "/ASSET/products/mixed_metal_scrap.webp"
+
 
 export const products = [
   {
@@ -175,7 +184,16 @@ export const productImages = [
   { name: "fresh_fruits_vegetables", src: fresh_fruits_vegetables },
   { name: "dehydrated_onion_garlic", src: dehydrated_onion_garlic },
   { name: "dehydrated_vegetables", src: dehydrated_vegetables },
-  { name: "frozen_foods", src: frozen_foods }
+  { name: "frozen_foods", src: frozen_foods },
+  { name: "aluminium_scrap", src: aluminium_scrap },
+  { name: "copper_scrap", src: copper_scrap },
+  { name: "scrap_metal", src: scrap_metal },
+  { name: "brake_systems_parts", src: brake_systems_parts },
+  { name: "brass_scrap", src: brass_scrap },
+  { name: "auto_parts", src: auto_parts },
+  { name: "engine_parts", src: engine_parts },
+  { name: "mixed_metal_scrap", src: mixed_metal_scrap },
+  
 
 ];
 
@@ -253,6 +271,14 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("fresh fruits") || normalizedName.includes("fresh fruit") || normalizedName.includes("fresh vegetables") || normalizedName.includes("fresh vegetable")) return fresh_fruits_vegetables;
   if (normalizedName.includes("dehydrated")) return dehydrated_vegetables;
   if (normalizedName.includes("frozen")) return frozen_foods;
+  if (normalizedName.includes("aluminium scrap")) return aluminium_scrap;
+  if (normalizedName.includes("copper scrap")) return copper_scrap;
+  if (normalizedName.includes("scrap metal")) return scrap_metal;
+  if (normalizedName.includes("brake systems parts")) return brake_systems_parts;
+  if (normalizedName.includes("brass scrap")) return brass_scrap;
+  if (normalizedName.includes("auto parts")) return auto_parts;
+  if (normalizedName.includes("engine parts")) return engine_parts;
+  if (normalizedName.includes("mixed metal scrap")) return mixed_metal_scrap;
 
   return null;
 };

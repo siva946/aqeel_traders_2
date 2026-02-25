@@ -5,7 +5,6 @@ import { getProductImage } from "../data/data";
 const ScrapMetal = () => {
   const products = [
     { name: "Iron Scrap", category: "Scrap Metal" },
-    { name: "Steel Scrap", category: "Scrap Metal" },
     { name: "Copper Scrap", category: "Scrap Metal" },
     { name: "Aluminum Scrap", category: "Scrap Metal" },
     { name: "Brass Scrap", category: "Scrap Metal" },

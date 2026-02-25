@@ -45,7 +45,7 @@ import dehydrated_onion_garlic from "/ASSET/products/dehydrated_onion_garlic.web
 import dehydrated_vegetables from "/ASSET/products/dehydrated_vegetables.webp"
 import frozen_foods from "/ASSET/products/frozen_foods.webp"
 import logo from "/logo.jpeg"
-import aluminium_scrap from "/ASSET/products/aluminium_scrap.webp"
+import aluminum_scrap from "/ASSET/products/aluminium_scrap.webp"
 import copper_scrap from "/ASSET/products/copper_scrap.webp"
 import scrap_metal from "/ASSET/products/scrap_metal.webp"
 import brake_systems_parts from "/ASSET/products/brake_systems_parts.webp"
@@ -53,6 +53,16 @@ import brass_scrap from "/ASSET/products/brass_scrap.webp"
 import auto_parts from "/ASSET/products/auto_parts.webp"
 import engine_parts from "/ASSET/products/engine_parts.webp"
 import mixed_metal_scrap from "/ASSET/products/mixed_metal_scrap.webp"
+import iron_scrap from "/ASSET/products/iron_scrap.webp"
+import transmission_parts from "/ASSET/products/transmission_parts.webp"
+import electrical_components from "/ASSET/products/electrical_components.webp"
+import body_parts from "/ASSET/products/body_parts.webp"
+import stainless_steel_coils from "/ASSET/products/stainless_steel_coils.webp"
+import stainless_steel_sheets from "/ASSET/products/stainless_steel_sheets.webp"
+import stainless_steel_pipes from "/ASSET/products/stainless_steel_pipes.webp"
+import stainless_steel_bars from "/ASSET/products/stainless_steel_bars.webp"
+import stainless_steel_fittings from "/ASSET/products/stainless_steel_fittings.webp"
+import stainless_steel_wires from "/ASSET/products/stainless_steel_wires.webp"
 
 
 export const products = [
@@ -185,14 +195,24 @@ export const productImages = [
   { name: "dehydrated_onion_garlic", src: dehydrated_onion_garlic },
   { name: "dehydrated_vegetables", src: dehydrated_vegetables },
   { name: "frozen_foods", src: frozen_foods },
-  { name: "aluminium_scrap", src: aluminium_scrap },
+  { name: "aluminum_scrap", src: aluminum_scrap },
   { name: "copper_scrap", src: copper_scrap },
   { name: "scrap_metal", src: scrap_metal },
   { name: "brake_systems_parts", src: brake_systems_parts },
   { name: "brass_scrap", src: brass_scrap },
   { name: "auto_parts", src: auto_parts },
-  { name: "engine_parts", src: engine_parts },
+  { name: "engine_components", src: engine_parts },
   { name: "mixed_metal_scrap", src: mixed_metal_scrap },
+  { name: "iron_scrap", src: iron_scrap },
+  { name: "transmission_parts", src: transmission_parts },
+  {name: "electrical_components", src: electrical_components},
+  {name: "body_parts", src: body_parts},
+  { name: "stainless_steel_coils", src: stainless_steel_coils },
+  { name: "stainless_steel_sheets", src: stainless_steel_sheets },
+  { name: "stainless_steel_pipes", src: stainless_steel_pipes },
+  { name: "stainless_steel_bars", src: stainless_steel_bars },
+  { name: "stainless_steel_fittings", src: stainless_steel_fittings },
+  { name: "stainless_steel_wires", src: stainless_steel_wires },
   
 
 ];
@@ -271,15 +291,24 @@ export const getProductImage = (productName) => {
   if (normalizedName.includes("fresh fruits") || normalizedName.includes("fresh fruit") || normalizedName.includes("fresh vegetables") || normalizedName.includes("fresh vegetable")) return fresh_fruits_vegetables;
   if (normalizedName.includes("dehydrated")) return dehydrated_vegetables;
   if (normalizedName.includes("frozen")) return frozen_foods;
-  if (normalizedName.includes("aluminium scrap")) return aluminium_scrap;
+  if (normalizedName.includes("Aluminum scrap")) return aluminum_scrap;
   if (normalizedName.includes("copper scrap")) return copper_scrap;
   if (normalizedName.includes("scrap metal")) return scrap_metal;
   if (normalizedName.includes("brake systems parts")) return brake_systems_parts;
   if (normalizedName.includes("brass scrap")) return brass_scrap;
   if (normalizedName.includes("auto parts")) return auto_parts;
-  if (normalizedName.includes("engine parts")) return engine_parts;
+  if (normalizedName.includes("engine components")) return engine_parts;
   if (normalizedName.includes("mixed metal scrap")) return mixed_metal_scrap;
-
+  if (normalizedName.includes("iron scrap")) return iron_scrap;
+  if (normalizedName.includes("transmission parts")) return transmission_parts;
+  if (normalizedName.includes("electrical components")) return electrical_components;
+  if (normalizedName.includes("body parts")) return body_parts;
+  if (normalizedName.includes("stainless steel coils")) return stainless_steel_coils;
+  if (normalizedName.includes("stainless steel sheets")) return stainless_steel_sheets;
+  if (normalizedName.includes("stainless steel pipes")) return stainless_steel_pipes;
+  if (normalizedName.includes("stainless steel bars")) return stainless_steel_bars;
+  if (normalizedName.includes("stainless steel fittings")) return stainless_steel_fittings;
+  if (normalizedName.includes("stainless steel wires")) return stainless_steel_wires;
   return null;
 };
 
